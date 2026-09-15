@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 汇盈聚金</title>
+  <style>
+    :root {
+      --ink: #081426;
+      --navy: #071f3b;
+      --blue: #14508f;
+      --gold: #d7a84f;
+      --gold-2: #f2c76d;
+      --paper: #f6f8fb;
+      --line: #dfe6ef;
+      --muted: #66758a;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(6, 24, 45, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 17, 32, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      background: url("logo.png") center / contain no-repeat;
+    }
+
+    .brand small {
+      display: block;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14px;
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .page-hero {
+      padding: 156px 0 92px;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(5, 15, 30, 0.96) 0%, rgba(7, 31, 59, 0.86) 45%, rgba(7, 31, 59, 0.42) 100%),
+        url("bg-hero.png") right bottom / cover no-repeat;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .page-hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      color: var(--gold-2);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold-2);
+    }
+
+    .page-hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .page-hero p {
+      max-width: 660px;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-dark {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 42px;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .section-dark .section-title {
+      color: var(--white);
+    }
+
+    .body-copy {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+      color: #3e4c5f;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .body-copy strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .metric-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      min-height: 150px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--blue);
+      font-size: 30px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .capability-table {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .capability-row {
+      display: contents;
+    }
+
+    .capability-name,
+    .capability-desc {
+      padding: 28px 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .capability-name {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+      background: #fbfcfe;
+    }
+
+    .capability-desc {
+      color: #405066;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1px;
+      margin-top: 44px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .timeline-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
+      color: var(--gold-2);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .timeline-text {
+      padding: 24px 30px;
+    }
+
+    .timeline-text strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    .timeline-text span {
+      display: block;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .problem {
+      min-height: 185px;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .problem h3 {
+      color: var(--ink);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .problem p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin: 44px auto 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 30px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .cta {
+      padding: 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(7, 31, 59, 0.97), rgba(8, 20, 38, 0.97)),
+        url("bg-hero.png") center bottom / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      line-height: 1.22;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #121821;
+      box-shadow: 0 16px 38px rgba(215, 168, 79, 0.24);
+    }
+
+    .footer {
+      padding: 28px 0;
+      background: #050d18;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        width: min(100% - 28px, 1180px);
+        height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 3px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .page-hero {
+        padding: 154px 0 70px;
+      }
+
+      .page-hero h1 {
+        font-size: 42px;
+      }
+
+      .intro-grid,
+      .capability-table,
+      .problem-grid,
+      .faq-item,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .capability-name,
+      .capability-desc {
+        padding: 22px;
+      }
+
+      .capability-name {
+        border-bottom: none;
+      }
+
+      .cta {
+        padding: 36px 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand strong {
+        font-size: 15px;
+      }
+
+      .brand small {
+        display: none;
+      }
+
+      .nav-links a {
+        padding: 0 10px;
+        font-size: 13px;
+      }
+
+      .page-hero h1 {
+        font-size: 35px;
+      }
+
+      .metric-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-step {
+        grid-template-columns: 58px 1fr;
+      }
+
+      .timeline-text {
+        padding: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>汇盈聚金</strong>
+          <small>Huiying Jijin Global Trade</small>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a class="active" href="about.html">关于我们</a></li>
+        <li><a href="index.html#capability">服务能力</a></li>
+        <li><a href="index.html#cooperation">合作流程</a></li>
+        <li><a href="index.html#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="eyebrow">About Huiying Jijin</div>
+        <h1>扎根中俄两地，服务跨境采购、贸易与履约。</h1>
+        <p>汇盈聚金专注中俄贸易服务，以真实的本地资源、稳定的供应商筛选能力和全链路履约经验，帮助客户更高效地完成跨境采购与市场拓展。</p>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container intro-grid">
+        <div>
+          <div class="section-kicker">Company Profile</div>
+          <h2 class="section-title">从家纺行业经验出发，拓展至全品类跨境供应链服务</h2>
+          <div class="body-copy">
+            <p><strong>汇盈聚金</strong>是一家专注中俄贸易的企业，在中国和俄罗斯均设有办公场地，能够围绕采购、谈判、生产、验货、文件、物流和仓储等环节提供持续支持。</p>
+            <p>团队拥有10年家用纺织品行业经验，并已从家纺拓展到纺织品、电子产品、设备等更多品类，帮助客户按需寻找可靠生产厂家，匹配更合适的价格、交期和质量条件。</p>
+            <p>公司与俄罗斯本土企业签约合作，可提供完整资质信息和注册地址，并支持卢布结算，降低跨境合作中的沟通与结算门槛。</p>
+          </div>
+        </div>
+
+        <aside class="metric-panel" aria-label="核心经营数据">
+          <div class="metric">
+            <strong>6000万</strong>
+            <span>家用纺织品年营业额人民币</span>
+          </div>
+          <div class="metric">
+            <strong>1000万</strong>
+            <span>俄罗斯线上商城年采购额人民币</span>
+          </div>
+          <div class="metric">
+            <strong>400-600</strong>
+            <span>累计服务客户数量</span>
+          </div>
+          <div class="metric">
+            <strong>~100</strong>
+            <span>年均活跃稳定客户</span>
+          </div>
+          <div class="metric">
+            <strong>10万+</strong>
+            <span>俄罗斯自有工厂数月内可生产抱枕数量</span>
+          </div>
+          <div class="metric">
+            <strong>3000m²</strong>
+            <span>俄罗斯自有仓储空间</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">我们的产品与服务</h2>
+
+        <div class="capability-table">
+          <div class="capability-row">
+            <div class="capability-name">采购与供应商开发</div>
+            <div class="capability-desc">按客户需求在中国寻找靠谱生产厂家，比较不同供应商的价格、条件、交期和质量基础，形成更可执行的采购方案。</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">商务谈判与合同协同</div>
+            <div class="capability-desc">代表客户与工厂沟通价格、交期、质量、合同细节及后续生产配合，减少跨语言、跨地区沟通成本。</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">验厂验货与质量跟进</div>
+            <div class="capability-desc">出货前可进行实地验厂验货，提供图片、视频或直播反馈，帮助客户掌握真实生产情况。</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">认证、清关与物流</div>
+            <div class="capability-desc">协助处理合同、规格证书、海关文件等资料，并提供物流运输、清关、认证和俄罗斯全境配送服务。</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">本地仓储与线上渠道</div>
+            <div class="capability-desc">俄罗斯本地仓储可供客户存放货物，同时已运营本土线上商城，正在筹备跨境直购店。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-kicker">Workflow</div>
+        <h2 class="section-title">合作流程清晰，关键节点可视化</h2>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="timeline-index">01</div>
+            <div class="timeline-text">
+              <strong>需求沟通</strong>
+              <span>客户提出产品、价格、数量、交期或供应链问题，我们协助梳理采购目标。</span>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-index">02</div>
+            <div class="timeline-text">
+              <strong>方案制定</strong>
+              <span>筛选工厂、对比价格条件、进行前期洽谈，并明确样品、认证、运输和结算方式。</span>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-index">03</div>
+            <div class="timeline-text">
+              <strong>验厂验货</strong>
+              <span>组织验厂和样品检验，可提供图片、视频报告或直播，帮助客户确认供应商与产品情况。</span>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-index">04</div>
+            <div class="timeline-text">
+              <strong>合同与生产跟进</strong>
+              <span>与客户和工厂推进合同签署，全程监控生产、质量和发货节点。</span>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-index">05</div>
+            <div class="timeline-text">
+              <strong>物流、清关与交付</strong>
+              <span>负责物流、清关和认证，最终送货到客户仓库，或存放至我方俄罗斯仓库。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-kicker">Advantages</div>
+        <h2 class="section-title">我们解决的是跨境贸易中的真实难题</h2>
+
+        <div class="problem-grid">
+          <article class="problem">
+            <h3>担心选错工厂</h3>
+            <p>通过实地考察、供应商对比和样品确认，让客户更直观看到供应链真实情况。</p>
+          </article>
+          <article class="problem">
+            <h3>不会与中方沟通</h3>
+            <p>我们承担谈判、条件确认、生产跟进和异常沟通，帮助客户争取更合适的合作条件。</p>
+          </article>
+          <article class="problem">
+            <h3>文件认证不熟悉</h3>
+            <p>协助处理合同、规格证书、海关文件等资料，降低跨境履约过程中的不确定性。</p>
+          </article>
+          <article class="problem">
+            <h3>国际运输复杂</h3>
+            <p>从工厂到俄罗斯仓储及配送的完整链路均可协同推进，减少多方对接成本。</p>
+          </article>
+          <article class="problem">
+            <h3>需要卢布结算</h3>
+            <p>与俄罗斯本土公司签约合作，支持卢布结算，更贴近当地客户的交易习惯。</p>
+          </article>
+          <article class="problem">
+            <h3>缺少本地仓储</h3>
+            <p>俄罗斯自有仓储支持货物寄存、调拨和后续履约，为长期贸易提供基础设施。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">常见问题</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>最低起订量是多少？</h3>
+            <p>具体起订量根据产品类型和供应商要求而定，请联系我们获取详细信息。</p>
+          </div>
+          <div class="faq-item">
+            <h3>交货周期多长？</h3>
+            <p>交货周期取决于产品类型、数量和运输距离，一般需要2-8周。</p>
+          </div>
+          <div class="faq-item">
+            <h3>商品出现质量问题怎么处理？</h3>
+            <p>我们会在发货前进行严格验货，如有问题可协助与工厂协商处理。</p>
+          </div>
+          <div class="faq-item">
+            <h3>付款方式是什么？</h3>
+            <p>与俄罗斯本土公司签约，支持卢布结算。具体条件可根据订单和合作模式沟通。</p>
+          </div>
+          <div class="faq-item">
+            <h3>是否承接小微企业和初创公司订单？</h3>
+            <p>是的，我们欢迎各类规模的客户合作，会根据产品、预算和订单阶段匹配合适方案。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>准备开始合作了吗？</h2>
+            <p>发送采购需求或产品资料，我们会协助评估下一步合作路径。</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#contact">立即联系</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 汇盈聚金 Huiying Jijin. All rights reserved.</span>
+      <span>China · Russia Cross-border Trade Services</span>
+    </div>
+  </footer>
+</body>
+</html>
