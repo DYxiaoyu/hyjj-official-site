@@ -182,7 +182,15 @@
     }
 
     .section {
-      padding: 88px 0;
+      padding: 56px 0;
+    }
+
+    section.section:not(.section-white):not(.section-dark) {
+      background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 15%, #f6f8fb 85%, #ffffff 100%);
+    }
+
+    .section-dark {
+      background: linear-gradient(180deg, #071f3b 0%, #0a2a4e 50%, #071f3b 100%);
     }
 
     .section-white {
@@ -222,12 +230,12 @@
     }
 
     .body-copy {
-      margin-top: 24px;
+      margin-top: 18px;
       display: grid;
-      gap: 16px;
+      gap: 10px;
       color: #3e4c5f;
-      font-size: 16px;
-      line-height: 1.95;
+      font-size: 15px;
+      line-height: 1.75;
     }
 
     .body-copy strong {
@@ -245,8 +253,8 @@
     }
 
     .metric {
-      min-height: 150px;
-      padding: 24px;
+      min-height: auto;
+      padding: 16px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -442,10 +450,11 @@
     }
 
     .footer {
-      padding: 28px 0;
+      padding: 16px 0;
       background: #050d18;
       color: rgba(255, 255, 255, 0.52);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .footer-inner {
@@ -469,8 +478,9 @@
 
       .nav-links {
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 3px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2px;
       }
 
       .container {
@@ -525,8 +535,14 @@
       }
 
       .nav-links a {
-        padding: 0 10px;
-        font-size: 13px;
+        padding: 5px 7px;
+        font-size: 12px;
+      }
+
+      .nav-links a.nav-cta {
+        margin-left: 0;
+        padding: 5px 10px;
+        font-size: 12px;
       }
 
       .page-hero h1 {
@@ -615,7 +631,7 @@
             <span>俄罗斯自有工厂数月内可生产抱枕数量</span>
           </div>
           <div class="metric">
-            <strong>3000m²</strong>
+            <strong>13000m²</strong>
             <span>俄罗斯自有仓储空间</span>
           </div>
         </aside>
@@ -776,8 +792,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 汇盈聚金 Huiying Jijin. All rights reserved.</span>
-      <span>China · Russia Cross-border Trade Services</span>
+      <span>© 2026 汇盈聚金（江苏）国际贸易有限公司 Huiying Jijin. All rights reserved.</span>
     </div>
   </footer>
 </body>

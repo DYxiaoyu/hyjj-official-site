@@ -485,10 +485,11 @@
     }
 
     .footer {
-      padding: 28px 0;
+      padding: 16px 0;
       background: #050d18;
       color: rgba(255, 255, 255, 0.52);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .footer-inner {
@@ -517,8 +518,9 @@
 
       .nav-links {
         width: 100%;
-        flex-wrap: wrap;
-        gap: 4px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2px;
       }
 
       .hero {
@@ -580,8 +582,14 @@
       }
 
       .nav-links a {
-        padding: 6px 9px;
-        font-size: 13px;
+        padding: 5px 7px;
+        font-size: 12px;
+      }
+
+      .nav-links a.nav-cta {
+        margin-left: 0;
+        padding: 5px 10px;
+        font-size: 12px;
       }
 
       .hero h1 {
@@ -797,8 +805,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 汇盈聚金 Huiying Jijin. All rights reserved.</span>
-      <span>China · Russia Cross-border Trade Services</span>
+      <span>© 2026 汇盈聚金（江苏）国际贸易有限公司 Huiying Jijin. All rights reserved.</span>
     </div>
   </footer>
 
@@ -818,6 +825,26 @@
         link.classList.toggle("active", link.getAttribute("href") === "#" + current);
       });
     });
+
+    // 发送邮件：复制邮箱到剪贴板，兼容手机浏览器
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var email = btn.getAttribute('href').replace('mailto:', '');
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(email).then(function () {
+            showToast('邮箱已复制：' + email + '，请粘贴到邮件 App');
+          });
+        }
+      });
+    });
+
+    function showToast(msg) {
+      var t = document.createElement('div');
+      t.textContent = msg;
+      t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.85);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;z-index:9999;max-width:90%;text-align:center;';
+      document.body.appendChild(t);
+      setTimeout(function () { t.remove(); }, 3000);
+    }
   </script>
 </body>
 </html>
