@@ -27,6 +27,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -504,6 +505,7 @@
     }
 
     @media (max-width: 900px) {
+      html { scroll-padding-top: 150px; }
       .nav {
         width: min(100% - 28px, 1180px);
         height: auto;
@@ -515,8 +517,8 @@
 
       .nav-links {
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 3px;
+        flex-wrap: wrap;
+        gap: 4px;
       }
 
       .hero {
@@ -578,7 +580,7 @@
       }
 
       .nav-links a {
-        padding: 0 10px;
+        padding: 6px 9px;
         font-size: 13px;
       }
 
