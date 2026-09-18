@@ -256,7 +256,7 @@
 
     .metric-panel {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       background: var(--white);
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
@@ -273,7 +273,8 @@
     .metric strong {
       display: block;
       color: var(--blue);
-      font-size: 30px;
+      font-size: 26px;
+      white-space: nowrap;
       line-height: 1.1;
       margin-bottom: 10px;
     }
