@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合作案例 - 汇盈聚金</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23071f3b'/%3E%3Cpath%20d='M16%206%20L26%2016%20L16%2026%20L6%2016%20Z'%20fill='%23d7a84f'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #081426;
+      --navy: #071f3b;
+      --blue: #14508f;
+      --gold: #d7a84f;
+      --gold-2: #f2c76d;
+      --paper: #f6f8fb;
+      --line: #dfe6ef;
+      --muted: #66758a;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(6, 24, 45, 0.12);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 17, 32, 0.88);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      background: url("logo.png") center / contain no-repeat;
+    }
+    .brand small {
+      display: block;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14px;
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    /* 供应商入驻 CTA 按钮 */
+    .nav-links a.nav-cta {
+      margin-left: 10px;
+      padding: 0 18px;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      background: linear-gradient(120deg, #B45309 0%, #D97706 100%);
+      box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+    .nav-links a.nav-cta:hover,
+    .nav-links a.nav-cta.active {
+      color: #fff;
+      background: linear-gradient(120deg, #B45309 0%, #D97706 100%);
+      filter: brightness(1.08);
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.45);
+      transform: translateY(-1px);
+    }
+    .page-hero {
+      position: relative;
+      padding: 156px 0 92px;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(5, 15, 30, 0.96) 0%, rgba(7, 31, 59, 0.86) 45%, rgba(7, 31, 59, 0.42) 100%),
+        url("bg-hero.png") right 50% / cover no-repeat;
+    }
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 90px;
+      background: linear-gradient(180deg, rgba(5,15,30,0) 0%, #ffffff 100%);
+      pointer-events: none;
+    }
+    .page-hero-content {
+      max-width: 800px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      color: var(--gold-2);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold-2);
+    }
+    .page-hero h1 {
+      font-size: 56px;
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .page-hero p {
+      max-width: 680px;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+    .section {
+      padding: 44px 0;
+    }
+    section.section:not(.section-white):not(.section-dark) {
+      background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 15%, #f6f8fb 85%, #ffffff 100%);
+    }
+    .section-white {
+      background: var(--white);
+    }
+    .section-dark {
+      color: var(--white);
+      background: var(--navy);
+    }
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin-top: 10px;
+      margin-bottom: 24px;
+      color: var(--ink);
+      font-size: 42px;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .section-dark .section-title {
+      color: var(--white);
+    }
+    .section-copy {
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    .section-dark .section-copy {
+      color: rgba(255, 255, 255, 0.72);
+    }
+    /* 数据条 */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 36px;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .stat {
+      padding: 32px 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .stat span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    /* 协作说明（深色区） */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      border-left: 1px solid rgba(255, 255, 255, 0.13);
+    }
+    .role-item {
+      padding: 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+    .role-item h4 {
+      color: var(--gold-2);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .role-item p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    /* 案例卡片 */
+    .case-list {
+      display: grid;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .case-card {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .case-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 26px;
+      padding: 36px 40px 0;
+    }
+    .case-index {
+      color: var(--gold);
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .case-title h3 {
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1.2;
+    }
+    .case-title small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .case-tags {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .case-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #fbf4e6;
+      color: #8a5a10;
+      font-size: 12.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .case-loc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .case-loc svg {
+      width: 14px;
+      height: 14px;
+    }
+    .case-intro {
+      padding: 18px 40px 28px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .case-block {
+      padding: 26px 30px;
+      border-top: 1px solid var(--line);
+    }
+    .case-block:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+    .case-block h4 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+    .case-block .cb-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex: 0 0 auto;
+    }
+    .case-block .cb-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .case-block ul {
+      list-style: none;
+    }
+    .case-block li {
+      position: relative;
+      padding-left: 16px;
+      color: #405066;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .case-block li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.74em;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+    }
+    .case-block.highlight {
+      background: #fbfcfe;
+    }
+    .case-block.highlight li {
+      color: #3a4a5e;
+    }
+    /* CTA */
+    .cta {
+      padding: 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(7, 31, 59, 0.97), rgba(8, 20, 38, 0.97)),
+        url("bg-hero.png") center bottom / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 {
+      font-size: 34px;
+      line-height: 1.22;
+      margin-bottom: 12px;
+    }
+    .cta p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #121821;
+      box-shadow: 0 16px 38px rgba(215, 168, 79, 0.24);
+    }
+    .footer {
+      padding: 16px 0;
+      background: #050d18;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 900px) {
+      .nav {
+        width: min(100% - 28px, 1180px);
+        height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2px;
+      }
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+      .page-hero {
+        padding: 154px 0 70px;
+      }
+      .page-hero h1 {
+        font-size: 42px;
+      }
+      .section {
+        padding: 48px 0;
+      }
+      .section-title {
+        font-size: 32px;
+      }
+      .stats-bar,
+      .role-grid,
+      .case-grid,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+      .case-block:nth-child(odd) {
+        border-right: none;
+      }
+      .case-head {
+        flex-direction: column;
+        gap: 14px;
+        padding: 28px 24px 0;
+      }
+      .case-tags {
+        margin-left: 0;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .case-intro {
+        padding: 14px 24px 24px;
+      }
+      .case-block {
+        padding: 22px 24px;
+      }
+      .cta {
+        padding: 36px 24px;
+      }
+    }
+    @media (max-width: 560px) {
+      .brand strong {
+        font-size: 15px;
+      }
+      .brand small {
+        display: none;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+      .nav-links a {
+        padding: 4px 5px;
+        font-size: 11px;
+      }
+      .nav-links a.nav-cta {
+        margin-left: 0;
+        padding: 4px 8px;
+        font-size: 11px;
+      }
+      .page-hero h1 {
+        font-size: 34px;
+      }
+      .stat strong {
+        font-size: 34px;
+      }
+      .case-index {
+        font-size: 36px;
+      }
+      .case-title h3 {
+        font-size: 22px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>汇盈聚金</strong>
+          <small>Huiying Jijin Global Trade</small>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="index.html#capability">服务能力</a></li>
+        <li><a href="index.html#cooperation">合作流程</a></li>
+        <li><a class="active" href="cases.html">合作案例</a></li>
+        <li><a href="index.html#contact">联系我们</a></li>
+        <li><a class="nav-cta" href="https://hyjj.shop/join" target="_blank" rel="noreferrer">供应商入驻</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="eyebrow">Cooperation Cases</div>
+        <h1>与头部制造企业长期同行，沉淀可验证的合作案例。</h1>
+        <p>汇盈聚金立足南通产业带，与体育器材、帽饰、家纺面料、服装、电动工具等品类的头部制造企业建立深度合作，为俄罗斯及独联体市场客户提供稳定、可验证、可追溯的供应链支撑。</p>
+      </div>
+    </section>
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-kicker">Our Partners</div>
+        <h2 class="section-title">五家头部制造企业，覆盖五大核心品类</h2>
+        <p class="section-copy">从家用健身器材到专业赛事装备，从帽饰全品类到科技家纺面料，再到女装成衣与电动工具全链路——合作企业均具备真实制造能力、权威资质认证与可追溯的项目记录。</p>
+        <div class="stats-bar" aria-label="合作概况">
+          <div class="stat">
+            <strong>5</strong>
+            <span>深度合作头部制造企业</span>
+          </div>
+          <div class="stat">
+            <strong>8+</strong>
+            <span>重大赛事与国家级项目供货记录</span>
+          </div>
+          <div class="stat">
+            <strong>5</strong>
+            <span>覆盖核心出口品类</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-kicker">How We Work</div>
+        <h2 class="section-title">我们如何将这些制造能力，交付到每一份跨境订单</h2>
+        <p class="section-copy">汇盈聚金承担的不只是信息撮合，而是从需求对接、验厂验货到谈判签约与履约交付的完整协同。</p>
+        <div class="role-grid">
+          <div class="role-item">
+            <h4>需求对接与代采</h4>
+            <p>对接俄罗斯采购方的产品、数量、交期与预算需求，在合作企业中匹配最合适的供应商与供货方案。</p>
+          </div>
+          <div class="role-item">
+            <h4>验厂验货与品控</h4>
+            <p>组织实地验厂与样品检验，以图片、视频或直播反馈真实生产情况，把关质量关键节点。</p>
+          </div>
+          <div class="role-item">
+            <h4>谈判签约与履约</h4>
+            <p>协助价格、交期、认证、结算与物流方案沟通，推进订单签署、生产跟进与长期供货计划。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">Partner Profiles</div>
+        <h2 class="section-title">合作企业档案</h2>
+        <p class="section-copy">以下合作企业均位于南通及周边产业带，具备完整的生产、检测与认证体系，可配合样品、验厂、质检与持续供货。</p>
+        <div class="case-list">
+          <article class="case-card">
+            <div class="case-head">
+              <div class="case-index">01</div>
+              <div class="case-title">
+                <h3>南通铁人运动用品有限公司</h3>
+                <small>Nantong Ironman Sports Equipment</small>
+              </div>
+              <div class="case-tags">
+                <span class="case-chip">体育器材 · 健身设备</span>
+                <span class="case-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>江苏 · 南通</span>
+              </div>
+            </div>
+            <p class="case-intro">覆盖竞技、健身、休闲、康复、体育场馆五大系列、1000余种产品的全品类体育器材制造商，从家用健身设备到国家级专业体能训练器材均具备生产能力。</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>产品体系</h4>
+                <ul>
+                  <li>室内健身器材：电动跑步机、健身车、综合训练器、哑铃、杠铃等家用及商用设备</li>
+                  <li>专业体能训练：气阻智能训练器材、爬绳机、风阻划船训练器，系国家体育总局“铁人计划”推荐器材</li>
+                  <li>户外与公共设施：健身路径、篮球架、乒乓球台、笼式球场、拼装泳池、学校体育器材等</li>
+                  <li>智能适老与新兴运动：适老化康复设备、匹克球拍、硅胶哑铃、智能跳绳等</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M5 21V10l5 3v-3l5 3v-3l5 3v11"/><path d="M10 21v-4h4v4"/></svg></span>制造实力</h4>
+                <ul>
+                  <li>公司占地260亩，建筑面积16万平方米</li>
+                  <li>金工、电焊、喷涂、装配、注塑五大车间，六条装配流水线</li>
+                  <li>生产检测设备近400台套，一期年产能健身器材150万台、健身路径器材2.5万套</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>资质与研发</h4>
+                <ul>
+                  <li>国家专利500余项（发明专利34项），多次参与体育器材国家标准制定</li>
+                  <li>通过 ISO9001、ISO14001、ISO45001 等体系认证，产品经国家体育用品质量监督检验中心检验</li>
+                  <li>出口产品通过 GS、CE 及欧盟 EN957 标准认证</li>
+                </ul>
+              </div>
+              <div class="case-block highlight">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v7a5 5 0 0 1-10 0z"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/></svg></span>高光记录</h4>
+                <ul>
+                  <li>2019第七届世界军人运动会健身器材供应商</li>
+                  <li>2020第十四届全国冬季运动会健身器材独家供应商</li>
+                  <li>2021第十四届全国运动会健身器材供应商</li>
+                  <li>国家奥林匹克体育中心及多个国家级体育组织合作伙伴</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head">
+              <div class="case-index">02</div>
+              <div class="case-title">
+                <h3>南通富美服饰有限公司</h3>
+                <small>Nantong Fumei Apparel</small>
+              </div>
+              <div class="case-tags">
+                <span class="case-chip">帽饰全品类</span>
+                <span class="case-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>江苏 · 南通</span>
+              </div>
+            </div>
+            <p class="case-intro">月产900–1200个品种的帽饰全品类制造商，从大众走量款到非遗工艺高端定制，配套手套、围巾等完整帽饰配饰产品线。</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>产品体系</h4>
+                <ul>
+                  <li>梭织帽、针织帽、草帽、毡帽、定型帽五大基础品类，含运动帽、渔夫帽、棒球帽、遮阳帽等上百款样式</li>
+                  <li>配套手套、围巾、披肩、软包等服饰配件，形成完整帽饰配饰产品线</li>
+                  <li>大漆工艺帽、足金金宝帽、红木礼帽、点翠棒球帽等非遗工艺高端定制</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M5 21V10l5 3v-3l5 3v-3l5 3v11"/><path d="M10 21v-4h4v4"/></svg></span>制造实力</h4>
+                <ul>
+                  <li>旗下五大生产基地，员工超1700人，年接单产能超1000万顶</li>
+                  <li>5.4万平方米帽子产业园及4–5万平方米工厂</li>
+                  <li>设计、开发、生产、销售一体化完整产业链</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>资质与研发</h4>
+                <ul>
+                  <li>2009年设立中国帽饰研发中心，国内外专业设计师团队每年推出上千款新品</li>
+                  <li>拥有近百项日本专利、发明专利、实用新型及外观专利</li>
+                  <li>2026年将AI生成技术深度嵌入设计流程，快速产出设计效果图</li>
+                </ul>
+              </div>
+              <div class="case-block highlight">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v7a5 5 0 0 1-10 0z"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/></svg></span>高光记录</h4>
+                <ul>
+                  <li>2022北京冬奥会生产4万顶针织帽，并为高山滑雪、越野滑雪队特供雷锋帽</li>
+                  <li>2025哈尔滨亚冬会吉祥物“滨滨”“妮妮”主题冬帽与围巾套件官方周边</li>
+                  <li>2024央视春晚设计出品“龙蟠霓巾”</li>
+                  <li>曾参与北京奥运会闭幕式4万顶针织帽生产</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head">
+              <div class="case-index">03</div>
+              <div class="case-title">
+                <h3>江苏金太阳纺织科技股份有限公司</h3>
+                <small>Jiangsu Golden Sun Textile</small>
+              </div>
+              <div class="case-tags">
+                <span class="case-chip">家纺面料 · 科技纤维</span>
+                <span class="case-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>江苏 · 南通</span>
+              </div>
+            </div>
+            <p class="case-intro">覆盖九大类数千种面料的科技家纺面料企业，以科技纤维为核心竞争力，客户覆盖全国超70%家纺品牌，拥有行业唯一的国家级工业设计中心。</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>产品体系</h4>
+                <ul>
+                  <li>印花、素色、贡缎、提花、磨毛等九大类数千种面料，每年推出约2000个花型</li>
+                  <li>艾能纤维：远红外发射0.93、原生抗菌≥94%，柔软度较普通棉纤维高30%以上</li>
+                  <li>艾阳绒、玉精冰丝凉席、婴肤科技棉等创新功能面料</li>
+                  <li>成品配套：床品四件套、枕芯、被芯、凉席等健康睡眠产品矩阵</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M5 21V10l5 3v-3l5 3v-3l5 3v11"/><path d="M10 21v-4h4v4"/></svg></span>制造实力</h4>
+                <ul>
+                  <li>全链路研发覆盖纤维、纺纱、织造、印染、助剂开发</li>
+                  <li>金太阳家纺设计研究院100余名研发设计人员，每年推出上千款新品</li>
+                  <li>新品研发由25-35天缩短至3分钟生成效果图，两年创新图稿超150万张</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>资质与研发</h4>
+                <ul>
+                  <li>国家专利200余项（发明专利99项），产品设计版权超1万件、专项设计版权超3万件</li>
+                  <li>家纺面料行业唯一的国家级工业设计中心</li>
+                  <li>国家知识产权示范企业、国家版权示范企业、国家级高新技术企业</li>
+                  <li>累计创造18个“行业首创”</li>
+                </ul>
+              </div>
+              <div class="case-block highlight">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"/></svg></span>客户与地位</h4>
+                <ul>
+                  <li>客户覆盖行业TOP 100家纺品牌</li>
+                  <li>合作品牌覆盖全国超70%的家纺品牌</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head">
+              <div class="case-index">04</div>
+              <div class="case-title">
+                <h3>江苏三润服装集团股份有限公司</h3>
+                <small>Jiangsu Sanrun Garment Group</small>
+              </div>
+              <div class="case-tags">
+                <span class="case-chip">女装代工 · 品牌</span>
+                <span class="case-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>江苏 · 南通</span>
+              </div>
+            </div>
+            <p class="case-intro">“代工+品牌”双轮驱动，96条自有生产线与300余家外协工厂构成跨国产能协同网络，覆盖女装全品类。</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>产品体系</h4>
+                <ul>
+                  <li>女装全品类：雪纺裙、连衣裙、衬衫、风衣、棉衣、裤子等</li>
+                  <li>运动功能服：高尔夫服饰、户外冲锋衣、运动休闲装</li>
+                  <li>针织与牛仔：针织衫、牛仔裤等</li>
+                  <li>精工刺绣：珠绣、刺绣等高工艺精品服饰</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M5 21V10l5 3v-3l5 3v-3l5 3v11"/><path d="M10 21v-4h4v4"/></svg></span>制造实力</h4>
+                <ul>
+                  <li>国内南通、宿迁、如东、河南4家工厂，海外缅甸2家、柬埔寨1家、越南1家</li>
+                  <li>96条自有生产线+300余家外协工厂，支持流水大单与柔性快返</li>
+                  <li>产能满时跨厂拆单协同（柬埔寨刺绣、缅甸缝制），保障提前交付</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>资质与研发</h4>
+                <ul>
+                  <li>100余人打样团队（75名专业样衣工），每月完成样衣4000件，超60%可直接投产</li>
+                  <li>面料研发向上游延伸至纱厂、染厂，运用3D CLO等先进技术</li>
+                  <li>通过 ISO9001、ISO14001 认证及 UL、SGS、ITS、BV 第三方验厂审核</li>
+                </ul>
+              </div>
+              <div class="case-block highlight">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 0L5 10.6V19h8l4.7-4.3a4 4 0 0 0 0-5.7z"/><path d="M9 14l2 2 4-4"/></svg></span>协同与柔性</h4>
+                <ul>
+                  <li>跨国产能协同网络，可根据订单规模灵活调度</li>
+                  <li>流水大单与柔性快返并行，满足不同市场节奏</li>
+                  <li>订单拆分与多厂协同交付，缩短整体交期</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-head">
+              <div class="case-index">05</div>
+              <div class="case-title">
+                <h3>江苏东成电动工具有限公司</h3>
+                <small>Jiangsu Dongcheng Power Tools</small>
+              </div>
+              <div class="case-tags">
+                <span class="case-chip">电动工具 · 全链路</span>
+                <span class="case-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>江苏 · 南通</span>
+              </div>
+            </div>
+            <p class="case-intro">700余款电动工具整机、15大品类手动工具与智能化设备并举，全产业链垂直整合，可承接定制化全链路方案。</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>产品体系</h4>
+                <ul>
+                  <li>电动工具700余款整机：钻孔紧固、砂磨切割、锤镐、锂电、园林、测量工具等</li>
+                  <li>智能化设备：DCKBOT钻孔机器人、DCK TERRAINA无边界智能割草机器人</li>
+                  <li>手动工具15大品类、超1000个SKU</li>
+                  <li>转子、定子等核心零配件，产业链垂直整合</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M5 21V10l5 3v-3l5 3v-3l5 3v11"/><path d="M10 21v-4h4v4"/></svg></span>制造实力</h4>
+                <ul>
+                  <li>生产基地占地35万平方米，建筑面积39万平方米，员工5800余人</li>
+                  <li>四大研发中心、500余名工程师，行业领先的测试实验室</li>
+                </ul>
+              </div>
+              <div class="case-block">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>资质与研发</h4>
+                <ul>
+                  <li>全球累计专利申请超3300件，其中发明专利1200余件、PCT国际专利140余件、有效授权专利1400余件</li>
+                  <li>全面执行 ISO9001:2015、ISO14001:2015、ISO45001:2018 体系标准</li>
+                </ul>
+              </div>
+              <div class="case-block highlight">
+                <h4><span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 0L5 10.6V19h8l4.7-4.3a4 4 0 0 0 0-5.7z"/><path d="M9 14l2 2 4-4"/></svg></span>定制与协同</h4>
+                <ul>
+                  <li>承诺可根据客户需求提供研发设计、加工、制造、售后一体化服务</li>
+                  <li>承接定制化需求，提供从产品设计到生产制造再到售后支持的全链路方案</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-white">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>准备与这些制造力量同行？</h2>
+            <p>发送采购需求或产品资料，我们会协助匹配合作企业与供货方案。</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#contact">立即联系</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 汇盈聚金（江苏）国际贸易有限公司 Huiying Jijin. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>
