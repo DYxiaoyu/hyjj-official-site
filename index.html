@@ -484,6 +484,120 @@
       word-break: break-word;
     }
 
+    /* ===== 首页：关于我们精简区块 ===== */
+    .about-home {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-home-text .section-title {
+      margin-bottom: 22px;
+    }
+
+    .about-home-text p {
+      margin-bottom: 16px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      color: #b45309;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .text-link::after {
+      content: "→";
+    }
+
+    .about-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .about-metric {
+      padding: 26px 24px;
+      background: var(--white);
+    }
+
+    .about-metric strong {
+      display: block;
+      color: var(--gold);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .about-metric span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ===== 首页：合作案例精简区块 ===== */
+    .cases-home-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .case-mini {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 40px rgba(6, 24, 45, 0.08);
+    }
+
+    .case-mini img {
+      display: block;
+      width: 100%;
+      height: 128px;
+      object-fit: cover;
+    }
+
+    .case-mini-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px 16px 20px;
+    }
+
+    .case-mini h3 {
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .case-mini-tag {
+      margin-bottom: 10px;
+      color: #b45309;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .case-mini p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .cases-more {
+      margin-top: 40px;
+      text-align: center;
+    }
+
     .footer {
       padding: 16px 0;
       background: #050d18;
@@ -546,9 +660,22 @@
       .hero-proof,
       .capability-grid,
       .section-head,
+      .about-home,
       .process-layout,
       .contact-band {
         grid-template-columns: 1fr;
+      }
+
+      .cases-home-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .case-mini:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .case-mini:last-child img {
+        height: 170px;
       }
 
       .hero-proof {
@@ -614,6 +741,18 @@
         grid-template-columns: 1fr;
       }
 
+      .cases-home-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-mini:last-child {
+        grid-column: auto;
+      }
+
+      .case-mini:last-child img {
+        height: 128px;
+      }
+
       .proof-item {
         padding: 20px;
       }
@@ -645,10 +784,10 @@
       </a>
       <ul class="nav-links">
         <li><a class="active" href="#hero">首页</a></li>
-        <li><a href="about.html">关于我们</a></li>
+        <li><a href="#about">关于我们</a></li>
         <li><a href="#capability">服务能力</a></li>
+        <li><a href="#cases">合作案例</a></li>
         <li><a href="#cooperation">合作流程</a></li>
-        <li><a href="cases.html">合作案例</a></li>
         <li><a href="#contact">联系我们</a></li>
         <li><a class="nav-cta" href="https://hyjj.shop/join" target="_blank" rel="noreferrer">供应商入驻</a></li>
       </ul>
@@ -674,12 +813,45 @@
             <span class="proof-label">年家纺及跨境贸易经验</span>
           </div>
           <div class="proof-item">
-            <span class="proof-number">10000+3000m²</span>
+            <span class="proof-number">10000m²<br>+3000m²</span>
             <span class="proof-label">俄罗斯自有仓储空间</span>
           </div>
           <div class="proof-item">
             <span class="proof-number">200+</span>
             <span class="proof-label">俄罗斯市场运营团队</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-home">
+          <div class="about-home-text">
+            <div class="section-kicker">About Us</div>
+            <h2 class="section-title">立足南通产业带，深耕中俄贸易的跨境供应链服务商</h2>
+            <p class="section-copy">汇盈聚金（江苏）国际贸易有限公司位于江苏南通，在中国和俄罗斯均设有办公场地，围绕采购、谈判、生产、验货、文件、物流与仓储等环节提供持续支持。</p>
+            <p class="section-copy">团队拥有 10 年家用纺织品行业经验，并已从家纺拓展至纺织品、电子产品、设备等更多品类；与俄罗斯本土企业签约合作，支持卢布结算，降低跨境合作的沟通与结算门槛。</p>
+            <a class="text-link" href="about.html">了解更多公司介绍</a>
+          </div>
+
+          <div class="about-metrics">
+            <div class="about-metric">
+              <strong>6000万</strong>
+              <span>家用纺织品年营业额（人民币）</span>
+            </div>
+            <div class="about-metric">
+              <strong>3亿</strong>
+              <span>俄罗斯线上商城年采购额（人民币）</span>
+            </div>
+            <div class="about-metric">
+              <strong>600+</strong>
+              <span>累计服务客户数量</span>
+            </div>
+            <div class="about-metric">
+              <strong>~100</strong>
+              <span>年均活跃稳定客户</span>
+            </div>
           </div>
         </div>
       </div>
@@ -724,6 +896,69 @@
             <h3>平台与推广</h3>
             <p>具备 Ozon、Wildberries 等平台运营经验，并拥有白俄罗斯合作伙伴及内容推广资源。</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Cooperation Cases</div>
+            <h2 class="section-title">与头部制造企业长期同行，沉淀可验证的合作案例</h2>
+          </div>
+          <p class="section-copy">合作企业均位于南通及周边产业带，具备真实制造能力、权威资质与可追溯的项目记录，覆盖体育器材、帽饰、家纺面料、服装、电动工具五大核心品类。</p>
+        </div>
+
+        <div class="cases-home-grid">
+          <article class="case-mini">
+            <img src="img/case-ironman.jpg" alt="铁人运动用品生产车间" loading="lazy">
+            <div class="case-mini-body">
+              <h3>铁人运动</h3>
+              <span class="case-mini-tag">体育器材·健身设备</span>
+              <p>占地 260 亩、专利 500 余项，军运会、冬运会、全运会供货。</p>
+            </div>
+          </article>
+
+          <article class="case-mini">
+            <img src="img/case-fumei.jpg" alt="富美服饰帽饰产品" loading="lazy">
+            <div class="case-mini-body">
+              <h3>富美服饰</h3>
+              <span class="case-mini-tag">帽饰全品类</span>
+              <p>5 大基地、年产能 1000 万顶，北京冬奥、亚冬会帽饰供货。</p>
+            </div>
+          </article>
+
+          <article class="case-mini">
+            <img src="img/case-goldensun.jpg" alt="金太阳纺织大楼" loading="lazy">
+            <div class="case-mini-body">
+              <h3>金太阳纺织</h3>
+              <span class="case-mini-tag">家纺面料</span>
+              <p>九大类数千面料、专利 200 余项，国家级工业设计中心。</p>
+            </div>
+          </article>
+
+          <article class="case-mini">
+            <img src="img/case-sanrun.jpg" alt="三润服装园区" loading="lazy">
+            <div class="case-mini-body">
+              <h3>三润服装</h3>
+              <span class="case-mini-tag">女装成衣</span>
+              <p>96 条自有产线、海内外多厂布局，通过 UL、SGS、BV 验厂。</p>
+            </div>
+          </article>
+
+          <article class="case-mini">
+            <img src="img/case-dongcheng.jpg" alt="东成工具智能制造车间" loading="lazy">
+            <div class="case-mini-body">
+              <h3>东成工具</h3>
+              <span class="case-mini-tag">电动工具</span>
+              <p>700 余款整机、专利 3300 余项，支持全链路定制。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="cases-more">
+          <a class="btn btn-primary" href="cases.html">查看全部案例详情</a>
         </div>
       </div>
     </section>

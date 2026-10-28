@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>关于我们 - 汇盈聚金</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23071f3b'/%3E%3Cpath%20d='M16%206%20L26%2016%20L16%2026%20L6%2016%20Z'%20fill='%23d7a84f'/%3E%3C/svg%3E">
   <style>
     :root {
       --ink: #081426;
@@ -137,7 +138,8 @@
       padding: 156px 0 92px;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(5, 15, 30, 0.96) 0%, rgba(7, 31, 59, 0.86) 45%, rgba(7, 31, 59, 0.42) 100%),
+        linear-gradient(90deg, rgba(5, 15, 30, 0.96) 0%, rgba(7, 31, 59, 0.84) 38%, rgba(7, 31, 59, 0.22) 68%, rgba(7, 31, 59, 0.08) 100%),
+        linear-gradient(180deg, rgba(5, 15, 30, 0.15), rgba(5, 15, 30, 0.7)),
         url("bg-hero.png") right 50% / cover no-repeat;
     }
 
@@ -146,17 +148,8 @@
       margin: 0 auto;
     }
 
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 90px;
-      background: linear-gradient(180deg, rgba(5,15,30,0) 0%, #ffffff 100%);
-      pointer-events: none;
-    }
-
     .page-hero-content {
-      max-width: 760px;
+      width: min(690px, 100%);
     }
 
     .eyebrow {
@@ -184,7 +177,7 @@
     }
 
     .page-hero p {
-      max-width: 660px;
+      max-width: 620px;
       margin-top: 22px;
       color: rgba(255, 255, 255, 0.76);
       font-size: 18px;
@@ -501,6 +494,13 @@
 
       .page-hero {
         padding: 154px 0 70px;
+        background:
+          linear-gradient(180deg, rgba(5, 15, 30, 0.96) 0%, rgba(7, 31, 59, 0.82) 56%, rgba(7, 31, 59, 0.6) 100%),
+          url("bg-hero.png") 64% bottom / cover no-repeat;
+      }
+
+      .page-hero-content {
+        margin-left: 0;
       }
 
       .page-hero h1 {
@@ -598,8 +598,8 @@
         <li><a href="index.html">首页</a></li>
         <li><a class="active" href="about.html">关于我们</a></li>
         <li><a href="index.html#capability">服务能力</a></li>
-        <li><a href="index.html#cooperation">合作流程</a></li>
         <li><a href="cases.html">合作案例</a></li>
+        <li><a href="index.html#cooperation">合作流程</a></li>
         <li><a href="index.html#contact">联系我们</a></li>
         <li><a class="nav-cta" href="https://hyjj.shop/join" target="_blank" rel="noreferrer">供应商入驻</a></li>
       </ul>
@@ -608,10 +608,12 @@
 
   <main>
     <section class="page-hero">
-      <div class="container page-hero-content">
-        <div class="eyebrow">About Huiying Jijin</div>
-        <h1>扎根中俄两地，服务跨境采购、贸易与履约。</h1>
-        <p>汇盈聚金专注中俄贸易服务，以真实的本地资源、稳定的供应商筛选能力和全链路履约经验，帮助客户更高效地完成跨境采购与市场拓展。</p>
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="eyebrow">About Huiying Jijin</div>
+          <h1>扎根中俄两地，服务跨境采购、贸易与履约。</h1>
+          <p>汇盈聚金专注中俄贸易服务，以真实的本地资源、稳定的供应商筛选能力和全链路履约经验，帮助客户更高效地完成跨境采购与市场拓展。</p>
+        </div>
       </div>
     </section>
 
@@ -649,7 +651,7 @@
             <span>俄罗斯自有工厂数月内可生产抱枕数量</span>
           </div>
           <div class="metric">
-            <strong>10000+3000m²</strong>
+            <strong>10000m²<br>+3000m²</strong>
             <span>俄罗斯自有仓储空间</span>
           </div>
         </aside>
