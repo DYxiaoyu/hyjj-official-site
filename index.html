@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>汇盈聚金 - 中俄跨境供应链服务商</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23071f3b'/%3E%3Cpath%20d='M16%206%20L26%2016%20L16%2026%20L6%2016%20Z'%20fill='%23d7a84f'/%3E%3C/svg%3E">
   <style>
     :root {
       --ink: #081426;
@@ -253,7 +254,9 @@
     }
 
     .proof-item {
-      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      padding: 26px 24px;
       background: rgba(6, 22, 42, 0.62);
     }
 
@@ -261,15 +264,17 @@
       display: block;
       color: var(--gold-2);
       font-size: 34px;
-      line-height: 1;
+      line-height: 1.12;
       font-weight: 800;
     }
 
     .proof-label {
+      margin-top: auto;
+      padding-top: 16px;
       display: block;
-      margin-top: 10px;
       color: rgba(255, 255, 255, 0.68);
       font-size: 13px;
+      line-height: 1.5;
     }
 
     .section {
@@ -682,6 +687,11 @@
         margin-top: 46px;
       }
 
+      .proof-label {
+        margin-top: 14px;
+        padding-top: 0;
+      }
+
       .section {
         padding: 68px 0;
       }
@@ -912,7 +922,7 @@
 
         <div class="cases-home-grid">
           <article class="case-mini">
-            <img src="img/case-ironman.jpg" alt="铁人运动用品生产车间" loading="lazy">
+            <img src="img/case-ironman.jpg" alt="铁人运动用品生产车间">
             <div class="case-mini-body">
               <h3>铁人运动</h3>
               <span class="case-mini-tag">体育器材·健身设备</span>
@@ -921,7 +931,7 @@
           </article>
 
           <article class="case-mini">
-            <img src="img/case-fumei.jpg" alt="富美服饰帽饰产品" loading="lazy">
+            <img src="img/case-fumei.jpg" alt="富美服饰帽饰产品">
             <div class="case-mini-body">
               <h3>富美服饰</h3>
               <span class="case-mini-tag">帽饰全品类</span>
@@ -930,7 +940,7 @@
           </article>
 
           <article class="case-mini">
-            <img src="img/case-goldensun.jpg" alt="金太阳纺织大楼" loading="lazy">
+            <img src="img/case-goldensun.jpg" alt="金太阳纺织大楼">
             <div class="case-mini-body">
               <h3>金太阳纺织</h3>
               <span class="case-mini-tag">家纺面料</span>
@@ -939,7 +949,7 @@
           </article>
 
           <article class="case-mini">
-            <img src="img/case-sanrun.jpg" alt="三润服装园区" loading="lazy">
+            <img src="img/case-sanrun.jpg" alt="三润服装园区">
             <div class="case-mini-body">
               <h3>三润服装</h3>
               <span class="case-mini-tag">女装成衣</span>
@@ -948,7 +958,7 @@
           </article>
 
           <article class="case-mini">
-            <img src="img/case-dongcheng.jpg" alt="东成工具智能制造车间" loading="lazy">
+            <img src="img/case-dongcheng.jpg" alt="东成工具智能制造车间">
             <div class="case-mini-body">
               <h3>东成工具</h3>
               <span class="case-mini-tag">电动工具</span>
